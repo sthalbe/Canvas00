@@ -15,23 +15,23 @@ const InputHandler = {
     
     handleKeyDown: function(event) {
       this.keys[event.key] = true;
-      this.emitEvent("keydown", event.key);
+      this.dispatchEvent("keydown", event.key);
     },
     
     handleKeyUp: function(event) {
       this.keys[event.key] = false;
-      this.emitEvent("keyup", event.key);
+      this.dispatchEvent("keyup", event.key);
     },
     
     isKeyDown: function(key) {
       return this.keys[key] === true;
     },
     
-    addListner: function(eventType, callback){
+    addListener: function(eventType, callback){
         this.listeners[eventType].push(callback);
     },
 
-    removeListner: function(eventType, callback){
+    removeListener: function(eventType, callback){
         this.listeners[eventType] = this.listeners[eventType].filter(listener => listener !== callback);
     },
     
@@ -42,5 +42,4 @@ const InputHandler = {
     }
   };
   
-  // Export the InputHandler object
   export default InputHandler;
