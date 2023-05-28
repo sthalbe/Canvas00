@@ -33,7 +33,6 @@ export class Paddle {
     }
 
     handleKeyUp(result){
-        console.log("[--handleKeyUp]" + result.lastXAxisInput + " / " + result.lastYAxisInput);
         if (result.lastXAxisInput === "left") {
             this.direction.x = -1;
         } else if(result.lastXAxisInput === "right") {

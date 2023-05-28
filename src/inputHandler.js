@@ -25,7 +25,6 @@ const InputHandler = {
     
     handleKeyDown: function(event) {
       this.keys[event.key] = true;
-      console.log("[handleKeyDown]" + event.key);
       if (event.key === "ArrowLeft") {
         this.queuingAxisInput(this.xAxisInputQueue, "left");
       } else if (event.key === "ArrowRight") {
@@ -66,7 +65,6 @@ const InputHandler = {
     
     handleKeyUp: function(event) {
       this.keys[event.key] = false;
-      console.log("[--handleKeyUp]" + event.key);
       if (event.key === "ArrowLeft") {
         this.dequeuingAxisInput(this.xAxisInputQueue, "left");
       } else if (event.key === "ArrowRight") {
