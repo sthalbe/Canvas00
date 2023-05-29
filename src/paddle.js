@@ -1,5 +1,5 @@
 export class Paddle {
-    constructor(gameWidth, gameHeight){
+    constructor(game){
         this.width = 150;
         this.height = 30;
         this.direction = {
@@ -8,8 +8,8 @@ export class Paddle {
         };
         this.speed = 100;
         this.position = {
-            x: gameWidth/2 - this.width / 2,
-            y: gameHeight - this.height - 10,
+            x: game.gameWidth/2 - this.width / 2,
+            y: game.gameHeight - this.height - 10,
         };
     }
 
@@ -51,10 +51,6 @@ export class Paddle {
     }
 
     update(dt) {
-        if(!dt){
-            return;
-        }
-
         this.position.x += this.direction.x / dt * this.speed;
         this.position.y += this.direction.y / dt * this.speed; 
     }
